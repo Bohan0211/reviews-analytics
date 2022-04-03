@@ -5,9 +5,11 @@ with open('reviews.txt', 'r') as f:
 	for line in f:
 		data.append(line)
 		count += 1
-		if count % 1000 == 0:
-			print(data)
+		if count % 10000 == 0:
+			print(len(data))
 
-print(data[3000])
-print('-------------------')
-print(data[4587])
+print('檔案讀取完了, 總共有', len(data), '筆資料')
+total = 0
+for d in data:
+	total += len(d)
+print('留言的平均長度為:', total/len(data))
